@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>TestNG_Automation</artifactId>
+    <artifactId>TestNG_Automation_iOS</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
