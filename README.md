@@ -16,6 +16,7 @@ This README file provides a description of the TestNG automation project for bot
 11. Switch to Month view (click back).
 12. Verify that event is added for April 24 and April 25.
 
+
 1. Open the **Calendar** app (already installed on iOS simulators), validate the application is started.
 2. Deal with any pop-ups that may arise, the choice is yours which option to take here and reach the **Calendar** screen.
 3. Click Calendars.
@@ -28,6 +29,7 @@ This README file provides a description of the TestNG automation project for bot
 10. Validate only Calendar is displayed now.
 11. Click on Done.
 12. Validate Calendar screen is loaded.
+
 
 ## Android Tests:
 1. Start the **Booking** application and continue without sign in.
