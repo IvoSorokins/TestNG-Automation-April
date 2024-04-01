@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * Utility class for reading properties from a configuration file.
+ * Utility class for reading properties from a configuration file
  */
 public class ConfigReader {
 
