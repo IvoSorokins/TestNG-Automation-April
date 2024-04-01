@@ -17,6 +17,7 @@ This README file provides a description of the TestNG automation project for bot
 12. Verify that event is added for April 24 and April 25.
 
 
+
 1. Open the **Calendar** app (already installed on iOS simulators), validate the application is started.
 2. Deal with any pop-ups that may arise, the choice is yours which option to take here and reach the **Calendar** screen.
 3. Click Calendars.
@@ -49,6 +50,7 @@ This README file provides a description of the TestNG automation project for bot
 15. Change Currency to Euro.
 16. Validate that Settings Currency is changed now to Euro.
 17. Click on Privacy Policy and validate that Privacy and Cookies policy is open.
+
 
 
 1. Start the **Booking** application and continue without sign in.
