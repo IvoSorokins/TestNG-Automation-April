@@ -70,3 +70,28 @@ This README file provides a description of the TestNG automation project for bot
 14. In Driver’s age enter your age. 
 15. Click search.
 16. Filter cars by Automatic and validate that first displayed car is automatic.
+
+
+## Utils:
+
+### ScreenshotUtil:
+- Utility class for capturing screenshots.
+- Provides a method for capturing screenshots based on test status.
+
+### TestListener
+- TestNG listener class responsible for capturing screenshots on test success and failure.
+- Implements ITestListener interface.
+
+### Helpers
+- Utility class containing helper methods for actions with elements.
+
+### DriverSetup
+- Utility class for setting up and tearing down the Appium Driver before and after test execution.
+- Initializes the driver and performs necessary configurations.
+
+### Global Variables
+- Contains global variables used across the project.
+
+### ConfigReader
+- Utility class for reading configuration properties.
+- Provides a method for retrieving properties from config.properties.
