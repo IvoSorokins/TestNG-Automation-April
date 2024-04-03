@@ -76,17 +76,17 @@ This README file provides a description of the TestNG automation project for bot
 
 ### ScreenshotUtil:
 - Utility class for capturing screenshots.
-- Provides a method for capturing screenshots based on test status.
+- Provides a method for capturing screenshots based on tests.testOne status.
 
 ### TestListener
-- TestNG listener class responsible for capturing screenshots on test success and failure.
+- TestNG listener class responsible for capturing screenshots on tests.testOne success and failure.
 - Implements ITestListener interface.
 
 ### Helpers
 - Utility class containing helper methods for actions with elements.
 
 ### DriverSetup
-- Utility class for setting up and tearing down the Appium Driver before and after test execution.
+- Utility class for setting up and tearing down the Appium Driver before and after tests.testOne execution.
 - Initializes the driver and performs necessary configurations.
 
 ### Global Variables
