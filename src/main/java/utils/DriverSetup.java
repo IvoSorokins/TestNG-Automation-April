@@ -5,6 +5,7 @@ import io.appium.java_client.ios.options.XCUITestOptions;
 import io.qameta.allure.Step;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -16,6 +17,7 @@ import static utils.GlobalVariables.globalTimeout;
 /**
  * Utility class for setting up the Appium driver
  */
+@Listeners({ TestListener.class })
 public class DriverSetup extends ConfigReader {
 
     /**
