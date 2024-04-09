@@ -6,6 +6,9 @@ import io.qameta.allure.Step;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Listeners;
+import pages.CalendarPage;
+import pages.NewEventPage;
+import pages.WhatsNewPage;
 
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -24,6 +27,13 @@ public class DriverSetup extends ConfigReader {
      * The instance of the Appium driver
      */
     public static IOSDriver driver;
+
+    protected Helpers helpers;
+
+    // Declaration of Page class objects
+    protected WhatsNewPage whatsNewPage;
+    protected CalendarPage calendarPage;
+    protected NewEventPage newEventPage;
 
     /**
      * Sets up the Appium driver before each test method
@@ -52,7 +62,11 @@ public class DriverSetup extends ConfigReader {
         // Wait for specified amount of time when trying to find element
         driver.manage().timeouts().implicitlyWait(globalTimeout);
 
+        helpers = new Helpers();
         // Initialize Pages here
+        whatsNewPage = new WhatsNewPage(driver);
+        calendarPage = new CalendarPage(driver);
+        newEventPage = new NewEventPage(driver);
 
     }
 
