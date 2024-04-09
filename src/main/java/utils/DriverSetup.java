@@ -34,9 +34,11 @@ public class DriverSetup extends ConfigReader {
 
         XCUITestOptions options = new XCUITestOptions();
         options
-                .setDeviceName(getProperty("device.name"))
                 .setPlatformName(getProperty("platformName"))
-                .setPlatformVersion(getProperty("platform.version"))
+                .setDeviceName(getProperty("device.name"))
+                .setPlatformVersion(getProperty("device.platform.version"))
+                .setAutomationName(getProperty("automation.name"))
+                .setUdid(getProperty("device.udid"))
                 .setBundleId(getProperty("bundle.id"))
                 .setNoReset(false)
                 .setAutoAcceptAlerts(true);
