@@ -1,6 +1,7 @@
 package utils;
 
 
+
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
@@ -9,7 +10,7 @@ import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 
 import java.util.List;
-import java.util.stream.IntStream;
+
 
 import static java.time.Duration.*;
 import static org.openqa.selenium.interactions.PointerInput.Kind.TOUCH;
@@ -27,35 +28,57 @@ public class Helpers {
     public enum Directions {
         UP,
         DOWN,
+        LEFT,
+        RIGHT
     }
 
     private final PointerInput FINGER = new PointerInput(TOUCH, "finger");
 
-    /**
-     * Performs a vertical swipe action on the iOS device
-     *
-     * @param driver    The iOS driver instance
-     * @param direction The direction of the swipe (UP or DOWN)
-     */
-    public void swipeVertically(IOSDriver driver, Directions direction) {
-        int startX = driver.manage().window().getSize().getWidth() / 2;
-        int startY = driver.manage().window().getSize().getHeight() / 2;
 
-        int endY;
+    public void swipe(IOSDriver driver, Directions direction, int swipeCount) {
+        Dimension size = driver.manage().window().getSize();
+
+        int startX, startY, endX, endY;
+
 
         switch (direction) {
-            case UP -> endY = (int) (driver.manage().window().getSize().getHeight() * 0.2);
-            case DOWN -> endY = (int) (driver.manage().window().getSize().getHeight() * 0.8);
-            default -> throw new IllegalArgumentException("Invalid direction selected: " + direction);
+            case UP:
+                startX = size.getWidth() / 2;
+                startY = (int) (size.getHeight() * 0.8);
+                endX = startX;
+                endY = (int) (size.getHeight() * 0.2);
+                break;
+            case DOWN:
+                startX = size.getWidth() / 2;
+                startY = (int) (size.getHeight() * 0.2);
+                endX = startX;
+                endY = (int) (size.getHeight() * 0.8);
+                break;
+            case LEFT:
+                startX = (int) (size.getWidth() * 0.8);
+                startY = size.getHeight() / 2;
+                endX = (int) (size.getWidth() * 0.2);
+                endY = startY;
+                break;
+            case RIGHT:
+                startX = (int) (size.getWidth() * 0.2);
+                startY = size.getHeight() / 2;
+                endX = (int) (size.getWidth() * 0.8);
+                endY = startY;
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid direction selected: " + direction);
         }
 
-        Sequence swipe = new Sequence(FINGER, 0);
+        for (int i = 0; i < swipeCount; i++) {
+            Sequence swipe = new Sequence(FINGER, 0);
 
-        swipe.addAction(FINGER.createPointerMove(ZERO, viewport(), startX, startY));
-        swipe.addAction(FINGER.createPointerDown(LEFT.asArg()));
-        swipe.addAction(FINGER.createPointerMove(ofMillis(1000), viewport(), startX, endY));
-        swipe.addAction(FINGER.createPointerUp(LEFT.asArg()));
-        driver.perform(List.of(swipe));
+            swipe.addAction(FINGER.createPointerMove(ZERO, viewport(), startX, startY));
+            swipe.addAction(FINGER.createPointerDown(LEFT.asArg()));
+            swipe.addAction(FINGER.createPointerMove(ofMillis(1000), viewport(), endX, endY));
+            swipe.addAction(FINGER.createPointerUp(LEFT.asArg()));
+            driver.perform(List.of(swipe));
+        }
     }
 
     /**
@@ -66,12 +89,7 @@ public class Helpers {
      * @param direction  The direction of the scroll (UP or DOWN)
      * @param swipeCount The number of swipes to perform
      */
-    public void scrollTo(IOSDriver driver, WebElement el, Directions direction, int swipeCount) {
-        IntStream.range(0, swipeCount).forEach(obj -> {
-            if (!el.isDisplayed())
-                swipeVertically(driver, direction);
-        });
-    }
+
 
     /**
      * Performs a long press action on an element on the iOS device

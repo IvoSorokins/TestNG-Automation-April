@@ -3,6 +3,7 @@
 This README file provides a description of the TestNG automation project for both iOS and Android tests.
 
 ## iOS Tests:
+### Test iOS 1:
 1. Open the **Calendar** app (already installed on iOS simulators), validate the application is started.
 2. Deal with any pop-ups that may arise, the choice is yours which option to take here and reach the **Calendar** screen.
 3. Click **+ New Event**.
@@ -17,7 +18,8 @@ This README file provides a description of the TestNG automation project for bot
 12. Verify that event is added for April 24 and April 25.
 
 <br>
-   
+
+### Test iOS 2:
 1. Open the **Calendar** app (already installed on iOS simulators), validate the application is started.
 2. Deal with any pop-ups that may arise, the choice is yours which option to take here and reach the **Calendar** screen.
 3. Click Calendars.
@@ -30,47 +32,6 @@ This README file provides a description of the TestNG automation project for bot
 10. Validate only Calendar is displayed now.
 11. Click on Done.
 12. Validate Calendar screen is loaded.
-
-<br>
-
-## Android Tests:
-1. Start the **Booking** application and continue without sign in.
-2. Select **Skopje** as destination.
-3. Select 24 - 28 April as **date**.
-4. Select 2 rooms and 3 adults.
-5. Click **Search**.
-6. On booking search screen validate expected destination and date is visible.
-7. Click on Save button (heart) on one of the listed properties.
-8. Go back to the search page.
-9. Click on Saved tab.
-10. Validate property is shown in Saved tab.
-11. Go back to the search page.
-12. Click on Sign in tab and validate that user is not logged in.
-13. Scroll down to and click Settings.
-14. Click Currency.
-15. Change Currency to Euro.
-16. Validate that Settings Currency is changed now to Euro.
-17. Click on Privacy Policy and validate that Privacy and Cookies policy is open.
-
-<br>
-
-1. Start the **Booking** application and continue without sign in.
-2. Navigate to Sign in tab.
-3. Click on Genius loyalty program.
-4. Scroll down to About Genius Levels and click on it.
-5. Swipe right to Genius Level 3 and validate that it is displayed.
-6. Click on Got it button.
-7. Click on Back button.
-8. Navigate to Search tab.
-9. Click on Car rental.
-10. Disable Return to same location button and validate that now pickup location and drop-off location are displayed.
-11. Add Skopje as Pickup location and Ohrid as Drop-off location.
-12. Select 24 April to 27 April 2024 as dates.
-13. Select 08:15 AM as Pickup time and 11:00 AM as Drop-off time.
-14. In Driver’s age enter your age. 
-15. Click search.
-16. Filter cars by Automatic and validate that first displayed car is automatic.
-
 
 ## Utils:
 
