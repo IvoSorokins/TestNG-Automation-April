@@ -118,4 +118,13 @@ public class Helpers {
         Dimension size = el.getSize();
         return new Point(location.x + size.getWidth() / 2, location.y + size.getHeight() / 2);
     }
+
+    public void wait(int seconds){
+        int mSeconds = seconds * 1000; // 1000 milliseconds = 1 seconds
+        try {
+            Thread.sleep(mSeconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
