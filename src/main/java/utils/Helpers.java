@@ -3,12 +3,13 @@ package utils;
 
 
 import io.appium.java_client.ios.IOSDriver;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.LocalTime;
 import java.util.List;
 
 
@@ -127,4 +128,28 @@ public class Helpers {
             e.printStackTrace();
         }
     }
+    public static LocalTime roundTimeToHour(int hour){
+        LocalTime currentTime = LocalTime.now();
+
+        // Round up to the specified hour
+        int resultingHour = currentTime.getHour()+ hour;
+
+        if (resultingHour >= 24) {
+            resultingHour -= 24;
+        }
+        LocalTime roundedTime = currentTime.withHour(resultingHour)
+                .withMinute(0)
+                .withSecond(0)
+                .withNano(0);
+
+        return roundedTime;
+
+    }
+
+    public static void clickElementMultipleTimes(WebElement element, int clicks){
+        for(int i = 0; i< clicks; i++){
+            element.click();
+        }
+    }
+
 }

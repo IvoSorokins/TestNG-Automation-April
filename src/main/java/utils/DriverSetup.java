@@ -1,14 +1,13 @@
 package utils;
 
+
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import io.qameta.allure.Step;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Listeners;
-import pages.CalendarPage;
-import pages.NewEventPage;
-import pages.WhatsNewPage;
+import pages.*;
 
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -32,8 +31,13 @@ public class DriverSetup extends ConfigReader {
 
     // Declaration of Page class objects
     protected WhatsNewPage whatsNewPage;
-    protected CalendarPage calendarPage;
+    protected DaysPage daysPage;
     protected NewEventPage newEventPage;
+    protected MonthsPage monthsPage;
+    protected CalendarsPage calendarsPage;
+    protected AddCalendarPage addCalendarPage;
+    protected AddCalendarColourPage addCalendarColourPage;
+    protected EditCalendarPage editCalendarPage;
 
     /**
      * Sets up the Appium driver before each test method
@@ -65,15 +69,20 @@ public class DriverSetup extends ConfigReader {
         helpers = new Helpers();
         // Initialize Pages here
         whatsNewPage = new WhatsNewPage(driver);
-        calendarPage = new CalendarPage(driver);
+        daysPage = new DaysPage(driver);
         newEventPage = new NewEventPage(driver);
+        monthsPage = new MonthsPage(driver);
+        calendarsPage = new CalendarsPage(driver);
+        addCalendarPage = new AddCalendarPage(driver);
+        addCalendarColourPage = new AddCalendarColourPage(driver);
+        editCalendarPage = new EditCalendarPage(driver);
 
     }
 
     /**
      * Tears down the Appium driver after each test method
      */
-    @Step("Driver is closed")
+    @Step("Driver is closed, ")
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.quit();
