@@ -58,7 +58,7 @@ public class NewEventPage extends Helpers {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    @Step("Calendar page is loaded")
+    @Step("New Event Page is loaded")
     public boolean calendarPageLoaded() {
         WebDriverWait wait = new WebDriverWait(driver, GlobalVariables.globalTimeout);
         return wait.until(ExpectedConditions.visibilityOf(titleTextBar)).isDisplayed() &&

@@ -30,7 +30,7 @@ public class EditCalendarPage {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
-    @Step("Delete Calendar page is loaded")
+    @Step("Edit Calendar page is loaded")
     public boolean EditCalendarPageLoaded() {
         WebDriverWait wait = new WebDriverWait(driver, GlobalVariables.globalTimeout);
         return  wait.until(ExpectedConditions.visibilityOf(calendarColourBlue)).isDisplayed() &&

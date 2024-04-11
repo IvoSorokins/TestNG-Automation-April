@@ -66,9 +66,7 @@ public class MonthsPage extends Helpers {
         }
     }
 
-
     @Step("Clicked Today button")
     public void clickTodayButtonMultipleTimes(int clickCount){clickElementMultipleTimes(bottomNavigationBar.getTodayButton(),clickCount);}
-
 
 }

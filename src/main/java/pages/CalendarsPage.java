@@ -99,6 +99,6 @@ public class CalendarsPage extends Helpers {
     @Step("Clicked Done")
     public void clickDone(){doneButton.click();}
 
-    @Step("Clicked I button")
+    @Step("Clicked Second I button")
     public void clickSecondIButton(){secondIButton.click();}
 }

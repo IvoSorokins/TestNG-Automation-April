@@ -31,7 +31,7 @@ public class AddCalendarPage extends Helpers{
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
-    @Step("Calendars page is loaded")
+    @Step("Add Calendars page is loaded")
     public boolean AddCalendarsPageLoaded() {
         WebDriverWait wait = new WebDriverWait(driver, GlobalVariables.globalTimeout);
         return  wait.until(ExpectedConditions.visibilityOf(calendarNameField)).isDisplayed() &&
